@@ -24,17 +24,17 @@ def create_model():
     root["labyrinth"] = labyrinth
 
     # Ajout des éléments du jeu dans les salles
-    shuffle_x = [0,1,2,3]
-    shuffle_y = [0,1,2,3]
-    random.shuffle(shuffle_x)
-    random.shuffle(shuffle_y)
-    print(shuffle_x,shuffle_y)
+    shuffle_li = [0,1,2,3]
+    shuffle_co = [0,1,2,3]
+    random.shuffle(shuffle_li)
+    random.shuffle(shuffle_co)
+    print(shuffle_li,shuffle_co)
     # Initialisation des positions
     # ATTENTION ! CETTE PARTIE EST COMPLEXE...
-    root["labyrinth"][ shuffle_x[0] ][ shuffle_y[0] ]["content"] = "J"
-    root["labyrinth"][ shuffle_x[0] ][ shuffle_y[0] ]["visited"] = True
-    root["labyrinth"][ shuffle_x[1] ][ shuffle_y[1] ]["content"] = "D"
-    root["labyrinth"][ shuffle_x[2] ][ shuffle_y[2] ]["content"] = "T"
+    root["labyrinth"][ shuffle_li[0] ][ shuffle_co[0] ]["content"] = "J"
+    root["labyrinth"][ shuffle_li[0] ][ shuffle_co[0] ]["visited"] = True
+    root["labyrinth"][ shuffle_li[1] ][ shuffle_co[1] ]["content"] = "D"
+    root["labyrinth"][ shuffle_li[2] ][ shuffle_co[2] ]["content"] = "T"
     # ... décomposition de la ligne ci dessus :
     # dictionaire du modèle de donnée
     #   -> clé "labyrinth"
