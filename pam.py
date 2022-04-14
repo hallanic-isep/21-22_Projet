@@ -30,10 +30,21 @@ def create_model():
     random.shuffle(shuffle_y)
     print(shuffle_x,shuffle_y)
     # Initialisation des positions
+    # ATTENTION ! CETTE PARTIE EST COMPLEXE...
     root["labyrinth"][ shuffle_x[0] ][ shuffle_y[0] ]["content"] = "J"
     root["labyrinth"][ shuffle_x[0] ][ shuffle_y[0] ]["visited"] = True
     root["labyrinth"][ shuffle_x[1] ][ shuffle_y[1] ]["content"] = "D"
     root["labyrinth"][ shuffle_x[2] ][ shuffle_y[2] ]["content"] = "T"
+    # ... décomposition de la ligne ci dessus :
+    # dictionaire du modèle de donnée
+    #   -> clé "labyrinth"
+    #       -> liste des lignes
+    #           -> case entre 0 et 3 dans la liste des lignes
+    #               -> liste des salles d'une ligne
+    #                   -> case entre 0 et 3 dans la liste des salles
+    #                       -> dictionaire d'une salle
+    #                           -> clé "content"
+    #                               -> on y associe la valeur "T"
 
     #print("root",root)
     return root
